@@ -28,6 +28,8 @@ app.use(cors(corsOptions));
 app.use(passport.initialize());
 passport.use('jwt', jwtStrategy);
 
+
+
 app.get('/v1', (req, res) => {
   res.send('Welcome back! GET from /v1');
 });
