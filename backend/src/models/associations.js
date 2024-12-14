@@ -1,38 +1,38 @@
-const User = require('./user');
+const Users = require('./users');
 const Cart = require('./cart');
 const CartService = require('./cartService');
-const Service = require('./service');
-const Type = require('./type');
+const Services = require('./services');
+const Types = require('./types');
 const Rating = require('./rating');
 const ServiceInfo = require('./serviceInfo');
 
-User.hasOne(Cart);
-Cart.belongsTo(User);
+Users.hasOne(Cart);
+Cart.belongsTo(Users);
 
-User.hasMany(Rating);
-Rating.belongsTo(User);
+Users.hasMany(Rating);
+Rating.belongsTo(Users);
 
 Cart.hasMany(CartService);
 CartService.belongsTo(Cart);
 
-Type.hasMany(Service);
-Service.belongsTo(Type);
+Types.hasMany(Services);
+Services.belongsTo(Types);
 
-Service.hasMany(Rating);
-Rating.belongsTo(Service);
+Services.hasMany(Rating);
+Rating.belongsTo(Services);
 
-Service.hasMany(CartService);
-CartService.belongsTo(Service);
+Services.hasMany(CartService);
+CartService.belongsTo(Services);
 
-Service.hasMany(ServiceInfo, { as: 'info' });
-ServiceInfo.belongsTo(Service);
+Services.hasMany(ServiceInfo, { as: 'info' });
+ServiceInfo.belongsTo(Services);
 
 module.exports = {
-  User,
+  Users,
   Cart,
   CartService,
-  Service,
-  Type,
+  Services,
+  Types,
   Rating,
   ServiceInfo,
 };

@@ -9,18 +9,18 @@ module.exports = new Sequelize(
     dialect: process.env.DB_DIALECT_DEV,
     host: process.env.DB_HOST_DEV,
     port: process.env.DB_CONNECTION_PORT_DEV || 5432,
-  }
+  },
 )
 
-// module.exports = {
-//   production: {
-//     username: process.env.DB_USERNAME_DEV,
-//     password: process.env.DB_PASSWORD_DEV,
-//     database: process.env.DB_DATABASE_DEV,
-//     host: process.env.DB_HOST_DEV,
-//     dialect: process.env.DB_DIALECT_DEV,
-//   }
-// }
+module.exports = {
+  development: {
+    username: process.env.DB_USERNAME_DEV,
+    password: process.env.DB_PASSWORD_DEV,
+    database: process.env.DB_DATABASE_DEV,
+    host: process.env.DB_HOST_DEV,
+    dialect: process.env.DB_DIALECT_DEV,
+  }
+}
 
 // {
 //   "development": {
