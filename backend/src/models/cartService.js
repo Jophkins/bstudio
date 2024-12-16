@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
-const Cart = require('./cart');
-const Services = require('./services');
+const sequelize = require('../config/sequelize');
+const {Cart, Services} = require('./associations');
 
 const CartService = sequelize.define('CartService', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
